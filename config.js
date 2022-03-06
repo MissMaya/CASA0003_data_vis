@@ -56,7 +56,7 @@ let divChapter5 =
     '<p>This is where we talk about Paternoster Square</p>';
 
 let divChapter6 =
-    '<h3>London Bridge</h3>' +
+    '<h3>London Bridge City</h3>' +
     '<img src="images/Chapter_6_Image.jpg"></img>' +
     '<p class="imageCredit"><a href="https://londonbridgecity.co.uk/estate/map">London Bridge City</a></p>' +
     '<p>This is where we talk about the Hays Galleria etc developments</p>';
@@ -94,7 +94,7 @@ var config = {
             chapterDiv: divChapter1,
             location: {
                 center: [-0.088304, 51.514028],
-                zoom: 10,
+                zoom: 15,
                 zoomSmall: 9,
                 pitch: 0,
                 bearing: 0,
@@ -107,12 +107,12 @@ var config = {
         },
         {
             id: "broadgate",
-            alignment: "left",
+            alignment: "right",
             hidden: false,
             chapterDiv: divChapter2,
             location: {
                 center: [-0.083462, 51.518931],
-                zoom: 10,
+                zoom: 15,
                 zoomSmall: 9,
                 pitch: 0,
                 bearing: 0,
@@ -227,7 +227,7 @@ var config = {
         },
         {
             id: "londonbridge",
-            alignment: "right",
+            alignment: "left",
             hidden: false,
             chapterDiv: divChapter6,
             location: {
@@ -235,7 +235,7 @@ var config = {
                 zoom: 15,
                 zoomSmall: 13,
                 pitch: 20,
-                bearing: 25,
+                bearing: -20,
             },
             mapAnimation: "flyTo",
             rotateAnimation: false,
