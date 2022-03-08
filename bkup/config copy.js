@@ -122,12 +122,16 @@ var config = {
             callback: "",
             onChapterEnter: [
                 {
-                    layer: "buildingsData"
+                    layer: "medianIncome",
+                    opacity: 1,
+                    duration: 300,
                 },
             ],
             onChapterExit: [
                 {
-                    layer: "buildingsData",
+                    layer: "medianIncome",
+                    opacity: 0,
+                    duration: 300,
                 },
             ],
         },
@@ -148,12 +152,16 @@ var config = {
             callback: "",
             onChapterEnter: [
                 {
-                    layer: "buildingsData"
+                    layer: "medianIncome",
+                    opacity: 0,
+                    duration: 300,
                 },
             ],
             onChapterExit: [
                 {
-                    layer: "buildingsData"
+                    layer: "medianIncome",
+                    opacity: 0,
+                    duration: 300,
                 },
             ],
         },
@@ -174,12 +182,16 @@ var config = {
             callback: "",
             onChapterEnter: [
                 {
-                    layer: "buildingsData",
+                    layer: "medianIncome",
+                    opacity: 1,
+                    duration: 300,
                 },
             ],
             onChapterExit: [
                 {
-                    layer: "buildingsData",
+                    layer: "medianIncome",
+                    opacity: 0,
+                    duration: 300,
                 },
             ],
         },
@@ -200,12 +212,16 @@ var config = {
             callback: "",
             onChapterEnter: [
                 {
-                    layer: "buildingsData",
+                    layer: "medianIncome",
+                    opacity: 1,
+                    duration: 300,
                 },
             ],
             onChapterExit: [
                 {
-                    layer: "buildingsData",
+                    layer: "medianIncome",
+                    opacity: 0,
+                    duration: 300,
                 },
             ],
         },
@@ -226,12 +242,16 @@ var config = {
             callback: "",
             onChapterEnter: [
                 {
-                    layer: "buildingsData",
+                    layer: "medianIncome",
+                    opacity: 1,
+                    duration: 300,
                 },
             ],
             onChapterExit: [
                 {
-                    layer: "buildingsData",
+                    layer: "medianIncome",
+                    opacity: 0,
+                    duration: 300,
                 },
             ],
         },
@@ -252,12 +272,16 @@ var config = {
             callback: "",
             onChapterEnter: [
                 {
-                    layer: "buildingsData",
+                    layer: "medianIncome",
+                    opacity: 1,
+                    duration: 300,
                 },
             ],
             onChapterExit: [
                 {
-                    layer: "buildingsData",
+                    layer: "medianIncome",
+                    opacity: 0,
+                    duration: 300,
                 },
             ],
         },
@@ -278,12 +302,16 @@ var config = {
             callback: "",
             onChapterEnter: [
                 {
-                    layer: "buildingsData",
+                    layer: "medianIncome",
+                    opacity: 1,
+                    duration: 300,
                 },
             ],
             onChapterExit: [
                 {
-                    layer: "buildingsData",
+                    layer: "medianIncome",
+                    opacity: 0,
+                    duration: 300,
                 },
             ],
         },

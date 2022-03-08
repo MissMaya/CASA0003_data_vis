@@ -217,86 +217,79 @@ map.on("load", function () {
         "sky-atmosphere-sun-intensity": 15,
       },
     });
-  } 
-    //Add the buildings data as a layer  
+  }  
     map.addLayer(
       {
-        id: "buildingsData",
+        id: "turnstileData",
         type: "circle",
         source: {
           type: "geojson",
-          data: "data/buildings.geojson",
+          data: "data/turnstileData.geojson",
         },
         paint: {
-          //"circle-color": "#ff7f50",
           "circle-color": [
-          "step",
-          ["get", "year"],
-          "#ffffff",
-          1986,
-          "#ccedf5",
-          1990,
-          "#99daea",
-          2000,
-          "#66c7e0",
-          2010,
-          "#33b5d5",
-          2020,
-          "#00a2ca",
+            "interpolate",
+            ["linear"],
+            ["get", "ENTRIES_DIFF"],
+            -1,
+            "#ff4400",
+            -0.7,
+            "#ffba31",
+            -0.4,
+            "#ffffff",
           ],
           "circle-stroke-color": "#4d4d4d",
           "circle-stroke-width": 0.5,
-          "circle-radius": 8
+          "circle-radius": [
+            "interpolate",
+            ["exponential", 2],
+            ["zoom"],
+            10,
+            ["interpolate", ["linear"], ["get", "ENTRIES_DIFF"], -1, 10, -0.4, 1],
+            15,
+            [
+              "interpolate",
+              ["linear"],
+              ["get", "ENTRIES_DIFF"],
+              -1,
+              25,-0.4,
+              12,
+            ],
+          ],
         },
       },
       "road-label-simple"
     );
+    map.addLayer(
+      {
+        id: "medianIncome",
+        type: "fill",
+        source: {
+          type: "geojson",
+          data: "data/medianIncome.geojson",
+        },
+        paint: {
+          "fill-opacity": 0,
+          "fill-color": [
+            "step",
+            ["get", "MHHI"],
+            "#ffffff",
+            20000,
+            "#ccedf5",
+            50000,
+            "#99daea",
+            75000,
+            "#66c7e0",
+            100000,
+            "#33b5d5",
+            150000,
+            "#00a2ca",
+          ],
+        },
+      },
+      "waterway-shadow"
+    );
 
-map.on("click", "buildingsData", function (e) {
-  var name = e.features[0].properties.name;
-  var address = e.features[0].properties.address;
-  var use = e.features[0].properties.use;
-  var year = e.features[0].properties.year;
-  var height = e.features[0].properties.height_metres;
-  var status = e.features[0].properties.status;
-  var architect = e.features[0].properties.architect;
-
-  new mapboxgl.Popup()
-    .setLngLat(e.lngLat)
-    .setHTML(
-      "<h4>" +
-        name +
-        "</h4>" +
-        "<p><b>Address:</b> " +
-        address +
-        "<br>" +
-        "<b>Use:</b> " +
-        use +
-        "<br>" +
-        "<b>Year:</b> " +
-        year +
-        "<br>" +
-        "<b>Height (metres):</b> " +
-        height +
-        "<br>" +
-        "<b>Status:</b> " +
-        status +
-        "<br>" +
-        "<b>Architect:</b> " +
-        architect +
-        "</p>"
-    )
-    .addTo(map);
-});
-
-map.on("mouseenter", "buildingsData", function () {
-  map.getCanvas().style.cursor = "pointer";
-});
-
-map.on("mouseleave", "buildingsData", function () {
-  map.getCanvas().style.cursor = "";
-});
-    
     // Setup the scroller instance and pass callback functions
     scroller
       .setup({
@@ -358,3 +351,127 @@ map.on("mouseleave", "buildingsData", function () {
 window.addEventListener("resize", scroller.resize);
 
 
+
+
+
+
+// mapboxgl.accessToken = "pk.eyJ1IjoibWlzc21heWE3OCIsImEiOiJja3liaHM1NGIwOGZ1Mm9xeDAzYmppMnRxIn0.80nsYB0uhmuRy5wUvXCy9A";
+
+// var map = new mapboxgl.Map({
+//   container: "map",
+//     style: "mapbox://styles/missmaya78/cl05ismqu001a14oayv0j1y7p",
+//   zoom: 10,
+//   center: [-74, 40.725],
+//   maxZoom: 15,
+//   minZoom: 8,
+//   maxBounds: [
+//     [-74.45, 40.45],
+//     [-73.55, 41],
+//   ],
+// });
+
+// map.on("load", function () {
+//   map.addLayer(
+//     {
+//       id: "turnstileData",
+//       type: "circle",
+//       source: {
+//         type: "geojson",
+//         data: "data/turnstileData.geojson",
+//       },
+//       paint: {
+//         "circle-color": [
+//           "interpolate",
+//           ["linear"],
+//           ["get", "ENTRIES_DIFF"],
+//           -1,
+//           "#ff4400",
+//           -0.7,
+//           "#ffba31",
+//           -0.4,
+//           "#ffffff",
+//         ],
+//         "circle-stroke-color": "#4d4d4d",
+//         "circle-stroke-width": 0.5,
+//         "circle-radius": [
+//           "interpolate",
+//           ["exponential", 2],
+//           ["zoom"],
+//           10,
+//           ["interpolate", ["linear"], ["get", "ENTRIES_DIFF"], -1, 10, -0.4, 1],
+//           15,
+//           [
+//             "interpolate",
+//             ["linear"],
+//             ["get", "ENTRIES_DIFF"],
+//             -1,
+//             25,
+//             -0.4,
+//             12,
+//           ],
+//         ],
+//       },
+//     },
+//     "road-label-simple"
+//   );
+//   map.addLayer(
+//     {
+//       id: "medianIncome",
+//       type: "fill",
+//       source: {
+//         type: "geojson",
+//         data: "data/medianIncome.geojson",
+//       },
+//       paint: {
+//         "fill-color": [
+//           "step",
+//           ["get", "MHHI"],
+//           "#ffffff",
+//           20000,
+//           "#ccedf5",
+//           50000,
+//           "#99daea",
+//           75000,
+//           "#66c7e0",
+//           100000,
+//           "#33b5d5",
+//           150000,
+//           "#00a2ca",
+//         ],
+//       },
+//     },
+//     "waterway-shadow"
+//   );
+// });
+
+// map.on("click", "turnstileData", function (e) {
+//   var entriesDiff = e.features[0].properties.ENTRIES_DIFF;
+//   var entries_06 = e.features[0].properties.ENTRIES_06;
+//   var entries_20 = e.features[0].properties.ENTRIES_20;
+//   var stationName = e.features[0].properties.stationName;
+//   new mapboxgl.Popup()
+//     .setLngLat(e.lngLat)
+//     .setHTML(
+//       "<h4>" +
+//         stationName +
+//         "</h4>" +
+//         "<p><b>Friday, March 6th:</b> " +
+//         entries_06 +
+//         " entries<br>" +
+//         "<b>Friday, March 20th:</b> " +
+//         entries_20 +
+//         " entries<br>" +
+//         "<b>Change:</b> " +
+//         Math.round(entriesDiff * 1000) / 10 +
+//         "%</p>"
+//     )
+//     .addTo(map);
+// });
+
+// map.on("mouseenter", "turnstileData", function () {
+//   map.getCanvas().style.cursor = "pointer";
+// });
+
+// map.on("mouseleave", "turnstileData", function () {
+//   map.getCanvas().style.cursor = "";
+// });
