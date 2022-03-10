@@ -4,7 +4,7 @@ let topTitleDiv =
     '<h4>CASA0003 Digital Visualisation | Individual Visualisation</h4>';
 
 let titleDiv = 
-    '<h1>Bang! The changing face of the City of London after the Big Bang of 1986</h1>';
+    '<h1>Bang! The changing face of London as a financial centre after the Big Bang of 1986</h1>';
 
 let bylineDiv = 
     '<p>21185793</p>';
@@ -26,11 +26,11 @@ let footerDiv =
     '</p>more references</p>';
 
 let divChapter1 =
-    '<h3>Before the Bang</h3>' +
+    '<h3>Bank</h3>' +
     '<img src="images/Chapter_1_Image.jpg"></img>' +
     '<p class="imageCredit"><a href="https://www.alamy.com/stock-photo-district1888-p065-bank-of-england-map-73513018.html?pv=1&stamp=2&imageid=D4B87983-BDCF-4DED-A2FA-64ECB8A86F16&p=221233&n=0&orientation=0&pn=1&searchtype=0&IsFromSearch=1&srch=foo%3dbar%26st%3d0%26pn%3d1%26ps%3d100%26sortby%3d2%26resultview%3dsortbyPopular%26npgs%3d0%26qt%3dengland%2520map%26qt_raw%3dengland%2520map%26lic%3d3%26mr%3d0%26pr%3d0%26ot%3d0%26creative%3d%26ag%3d0%26hc%3d0%26pc%3d%26blackwhite%3d1%26cutout%3d%26tbar%3d1%26et%3d0x000000000000000000000%26vp%3d0%26loc%3d0%26imgt%3d0%26dtfr%3d%26dtto%3d%26size%3d0xFF%26archive%3d1%26groupid%3d%26pseudoid%3d%26a%3d%26cdid%3d%26cdsrt%3d%26name%3d%26qn%3d%26apalib%3d%26apalic%3d%26lightbox%3d%26gname%3d%26gtype%3d%26xstx%3d0%26simid%3d%26saveQry%3d%26editorial%3d1%26nu%3d%26t%3d%26edoptin%3d%26customgeoip%3d%26cap%3d1%26cbstore%3d1%26vd%3d0%26lb%3d%26fi%3d2%26edrf%3d%26ispremium%3d1%26flip%3d0%26pl%3d">Source: Alamy</a></p>' +
     '<p>Before the bang, outline the restrictions 10 mins of BoE. Outline the lack of suitable space</p>';
-    
+
 let divChapter2 =
     '<h3>Broadgate</h3>' +
     '<img src="images/Chapter_2_Image.jpg"></img>' +
@@ -96,11 +96,11 @@ var config = {
             hidden: false,
             chapterDiv: divChapter1,
             location: {
-                center: [-0.088304, 51.514028],
-                zoom: 15,
+                center: [-0.094666, 51.513147], 
+                zoom: 15.10,
                 zoomSmall: 9,
-                pitch: 0,
-                bearing: 0,
+                pitch: 40,
+                bearing: -5,
             },
             mapAnimation: "flyTo",
             rotateAnimation: false,
@@ -122,8 +122,8 @@ var config = {
             hidden: false,
             chapterDiv: divChapter2,
             location: {
-                center: [-0.083462, 51.518931],
-                zoom: 15,
+                center: [-0.076246, 51.519333],
+                zoom: 15.5,
                 zoomSmall: 9,
                 pitch: 0,
                 bearing: 0,
@@ -148,11 +148,11 @@ var config = {
             hidden: false,
             chapterDiv: divChapter3,
             location: {
-                center: [-0.074949, 51.519587],
+                center: [ -0.077835, 51.519613],
                 zoom: 16,
                 zoomSmall: 14,
                 pitch: 40,
-                bearing: -7,
+                bearing: -25,
             },
             mapAnimation: "flyTo",
             rotateAnimation: false,
@@ -174,8 +174,8 @@ var config = {
             hidden: false,
             chapterDiv: divChapter4,
             location: {
-                center: [-0.089982, 51.517670],
-                zoom: 15,
+                center: [-0.088093, 51.518678],
+                zoom: 15.25,
                 zoomSmall: 14,
                 pitch: 40,
                 bearing: 8,
@@ -201,7 +201,7 @@ var config = {
             chapterDiv: divChapter5,
             location: {
                 center: [-0.099204, 51.514911],
-                zoom: 17,
+                zoom: 15.2,
                 zoomSmall: 9,
                 pitch: 0,
                 bearing: 8,
@@ -253,7 +253,7 @@ var config = {
             chapterDiv: divChapter7,
             location: {
                 center: [-0.056278, 51.504449],
-                zoom: 15,
+                zoom: 14.5,
                 zoomSmall: 14,
                 pitch: 0,
                 bearing: 18,
