@@ -195,6 +195,7 @@ to modify based on the data that I add in */
 locations, adjusting the zoom level, rotation, pitch and bearing */ 
 
 map.on("load", function () {
+
   // option to add 3D terrain if necessary
   if (config.use3dTerrain) {
     map.addSource("mapbox-dem", {
@@ -218,7 +219,7 @@ map.on("load", function () {
       },
     });
   } 
-    //Add the buildings data as a layer  
+    //Add the buildings data as a layer 
     map.addLayer(
       {
         id: "buildingsData",
@@ -228,7 +229,6 @@ map.on("load", function () {
           data: "data/buildings.geojson",
         },
         paint: {
-          //"circle-color": "#ff7f50",
           "circle-color": [
           "step",
           ["get", "year"],
@@ -249,8 +249,9 @@ map.on("load", function () {
           "circle-radius": 10
         },
       },
-      "road-label-simple"
-    );
+      "road-label-simple",
+    ); 
+    
 
 map.on("click", "buildingsData", function (e) {
   var name = e.features[0].properties.name;
