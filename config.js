@@ -102,8 +102,16 @@ var config = {
             mapAnimation: "flyTo",
             rotateAnimation: false,
             callback: "",
-            onChapterEnter: [],
-            onChapterExit: [],
+            onChapterEnter: [
+                {
+                    layer: "buildingsData"
+                },
+            ],
+            onChapterExit: [
+                {
+                    layer: "buildingsData",
+                },
+            ],
         },
         {
             id: "broadgate",
